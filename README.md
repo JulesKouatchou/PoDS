@@ -31,16 +31,14 @@ monitors the progress of each task and moves to the next available one as soon a
 one is completed. At any given time, all the nodes (in fact all the processors) 
 remain busy until there is no more work to do. 
 
+Prior to the development of PoDS, there was no tool available to help users who 
+were running serial independent tasks. Users had to request one compute node 
+(or a set of compute nodes) and underutilize it. 
+
 Here are additional features of PoDS:
 
 - Throughout the execution of the tasks, a logger file is created to monitor internal operations. This can be useful for debugging.
-- When all the tasks are completed, PoDS produces report containing timing statistics.
-
-Prior to the development of PoDS, there was no tool available to help users who 
-were running serial independent tasks. Users had to request one compute node 
-(or a set of compute nodes) and underutilize it. PoDS produces timing statistics 
-that can be useful to determine how the individual tasks were distributed to the 
-available processors, and how they can be properly balanced in future runs. 
+_ PoDS produces a report on timing statistics that can be useful to determine how the individual tasks were distributed to the available processors, and how they can be properly balanced in future runs. 
 
 PoDS is actively maintained and can easily be modified to meet users’ needs 
 as they emerge. Additional information on PoDS can be found in:
