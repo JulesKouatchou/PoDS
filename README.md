@@ -1,8 +1,7 @@
-                        Portable Distributed Scripts (PoDS)
+# Portable Distributed Scripts (PoDS)
+# NASA Goddard Space Flight Center, Greenbelt, Maryland 
 
-                 Goddard Space Flight Center, Greenbelt, Maryland 
-
-“Portable Distributed Scripts” (PoDS) is a Python application that allows users 
+`Portable Distributed Scripts` (PoDS) is a Python application that allows users 
 to execute serial independent tasks concurrently across nodes on multicore clusters. 
 The package consists of a set of scripts working together through a simple 
 text-based interface. A user only needs to provide minimal information to perform 
@@ -26,11 +25,16 @@ PoDS consists of a front-end Python script through which a user provides a list
 of tasks to be performed. In a practical sense, PoDS determines the list of nodes 
 reserved by the user and connects (through a password-less ssh command) to 
 individual nodes to distribute the workload (independent tasks). As long as tasks 
-are available, each node receives as many of them as it has processors 
-(if the user chooses to employ all the processors within the node). PoDS internally 
+are available, each node receives as many of them as it has cores 
+(if the user chooses to employ all the cores within the node). PoDS internally 
 monitors the progress of each task and moves to the next available one as soon as 
 one is completed. At any given time, all the nodes (in fact all the processors) 
 remain busy until there is no more work to do. 
+
+Here are additional features of PoDS:
+
+- Throughout the execution of the tasks, a logger file is created to monitor internal operations. This can be useful for debugging.
+- When all the tasks are completed, PoDS produces report containing timing statistics.
 
 Prior to the development of PoDS, there was no tool available to help users who 
 were running serial independent tasks. Users had to request one compute node 
@@ -38,11 +42,12 @@ were running serial independent tasks. Users had to request one compute node
 that can be useful to determine how the individual tasks were distributed to the 
 available processors, and how they can be properly balanced in future runs. 
 
-PoDS is actively maintained and can easily be modified to meet NASA users’ needs 
-as they emerge.
+PoDS is actively maintained and can easily be modified to meet users’ needs 
+as they emerge. Additional information on PoDS can be found in:
 
-This work was done by Jules Kouatchou and Amidu Oloso of SSAI for 
-Goddard Space Flight Center.
-https://modelingguru.nasa.gov/docs/DOC-1582
-https://modelingguru.nasa.gov/docs/DOC-2425
-https://modelingguru.nasa.gov/docs/DOC-2633
+
+- [https://modelingguru.nasa.gov/docs/DOC-1582](https://modelingguru.nasa.gov/docs/DOC-1582)
+- [https://modelingguru.nasa.gov/docs/DOC-2425](https://modelingguru.nasa.gov/docs/DOC-2425)
+- [https://modelingguru.nasa.gov/docs/DOC-2633](https://modelingguru.nasa.gov/docs/DOC-2633)
+
+This work was done by Jules Kouatchou and Amidu Oloso of SSAI for Goddard Space Flight Center.
