@@ -1,0 +1,40 @@
+This utility allows users to automatically:
+
+     (1) Tar a set of sub-directories (using the tar command)
+     (2) Compress the resulting files (using the gzip command)
+     (3) Move the compressed files to the archived location 
+
+Items (1) and (2) are combined in one shell script. Each script is
+done for a given sub-directory. The resulting scripts are a set of
+serial and independent tasks that are executed in parallel with PoDS.
+
+The user, first needs to provide the directory containing the 
+sub-directories to be archived. The utility will only handles
+sub-directories but not individual files. The reason is that the
+NCCS mass storage system is more efficient with large files (at most
+100 Gb) instead of small files. 
+
+After the utility creates large compressed files, it then generates
+a SLURM script that is used to transfer compressed files to the 
+archiving system. Here the user must provide the archiving directory
+and his/her sponsonr code account.
+
+Here is how the utility is used within a SLURM script:
+
+     # Automatically create an execution file 
+     # (called executionFile) for PoDS
+     # You need to provide the directory name.
+ 
+     /usr/local/other/pods/tools/parArchive/execFile_TarGzip.py directoryName
+ 
+     # Submit the tar and file compression tasks in parallel using PoDS
+ 
+     /usr/local/other/PoDS/PoDS/pods.py executionFile
+
+     # Create a SLURM script (named archiveSLURM.job) to transfer the files to archive.
+     # User needs to provide the archive directory and his/her sponsor code account.
+
+     /usr/local/other/pods/tools/parArchive/createArchiveScript.py archiveDirName sponsorID
+
+     # Submit the SLURM script for archiving
+     sbatch archiveSLURM.job

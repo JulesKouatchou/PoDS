@@ -1,0 +1,30 @@
+v5.0.0, 2019/07/24
+        Written by Jules Kouatchou (Jules.Kouatchou-1@nasa.gov)
+        Added 
+           - Used the logging module to track events within PoDS.
+             When PoDS runs, the file pods_logger_jobID.LOG is
+             created to record main PoDS events.
+
+v4.0.0, 2017/05/01
+        Written by Jules Kouatchou (Jules.Kouatchou-1@nasa.gov)
+        Added 
+           - functionalities to produce a timing statistics report.
+
+v3.0.0, 2013/11/15
+        Written by Jules Kouatchou (Jules.Kouatchou-1@nasa.gov)
+        Added 
+           - command line options to submit PoDS.
+           - options to pass environment variables
+           - functionalities to work under the SLURM environment.
+        
+
+v2.0.0, 2009/08/14 
+        Release of the python version
+        Written by Jules Kouatchou (Jules.Kouatchou-1@nasa.gov)
+
+v1.1.0, 2009/03/24 
+        Updated for cpu/node option
+
+v1.0.0, 2008/08/01 
+        Initial release
+        Written in C-shell by Rahman Syed

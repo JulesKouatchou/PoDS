@@ -1,0 +1,16 @@
+This utility allows users to automatically execute a set of gunzip
+commands in parallel. The user only needs to provide the full path
+of the directory where the .gz files are located and script, combined
+with PoDS will do the rest.
+
+Here is how the utility is used within a SLURM script (or interactive
+session):
+
+     # Automatically create an execution file 
+     # (called executionFile) for PoDS
+ 
+     /usr/local/other/PoDS/PoDS/tools/parGunzip/createExecFile.py directoryName
+ 
+     # Submit the gunzip command in parallel using PoDS
+ 
+     /usr/local/other/PoDS/PoDS/pods.py executionFile

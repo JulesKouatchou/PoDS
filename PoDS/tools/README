@@ -1,0 +1,9 @@
+We provide Python scripts that can be used to run a set of commands 
+in parallel using PoDS. The scripts automatically generate the 
+necessary files needed by PoDS.
+
+Consult each directory to have more information on each script.
+
+Remark:
+   Each provided script can only be run within a SLURM script or an
+   interactive session.
